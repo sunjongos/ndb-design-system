@@ -8,8 +8,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          blue: '#0066CC',
-          orange: '#FF6600',
+          green: '#92C118',
+          blue: '#0087B6',
+          orange: '#F29D00',
         }
       },
       fontFamily: {
