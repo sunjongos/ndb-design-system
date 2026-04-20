@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body { margin:0; padding:0; background:var(--bg-surface); }
+  .card { padding:20px 24px; font-family: var(--font-sans); display:flex; flex-wrap:wrap; gap:8px; }
+  .badge { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; padding:5px 10px; border-radius:999px; border:1px solid transparent; }
+  .dot { width:6px; height:6px; border-radius:50%; }
+  .b-success { background:var(--success-soft); color:var(--ndb-green-800); }
+  .b-success .dot { background:var(--success); }
+  .b-info    { background:var(--info-soft);    color:var(--ndb-blue-800); }
+  .b-info .dot { background:var(--info); }
+  .b-warn    { background:var(--warning-soft); color:var(--ndb-orange-800); }
+  .b-warn .dot { background:var(--warning); }
+  .b-danger  { background:var(--danger-soft);  color:#8A2525; }
+  .b-danger .dot { background:var(--danger); }
+  .b-neutral { background:var(--bg-muted); color:var(--fg-2); }
+  .b-outline { background:#fff; border-color:var(--border-default); color:var(--fg-2); padding:4px 9px; }
+</style></head><body><div class="card">
+  <span class="badge b-success"><span class="dot"></span>예약 확정</span>
+  <span class="badge b-info"><span class="dot"></span>진료 중</span>
+  <span class="badge b-warn"><span class="dot"></span>대기</span>
+  <span class="badge b-danger"><span class="dot"></span>취소됨</span>
+  <span class="badge b-neutral">기록 없음</span>
+  <span class="badge b-outline">척추센터</span>
+  <span class="badge b-outline">관절센터</span>
+  <span class="badge b-outline">내과</span>
+  <span class="badge b-outline">신경과</span>
+</div></body></html>

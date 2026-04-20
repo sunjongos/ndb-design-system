@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body { margin:0; padding:0; background:var(--bg-surface); }
+  .card { padding: 20px 24px; font-family: var(--font-sans); color: var(--fg-1); }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  .swatch { flex: 1 1 0; height:96px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); padding:10px 12px; display:flex; flex-direction:column; justify-content:space-between; color:#fff; }
+  .swatch .name { font-size:13px; font-weight:600; }
+  .swatch .hex  { font-family:var(--font-mono); font-size:11px; opacity:.9; }
+</style></head><body><div class="card"><div class="row">
+  <div class="swatch" style="background:#E6F4FB"><div class="name" style="color:var(--fg-1)">Blue 50</div><div class="hex" style="color:var(--fg-2)">#E6F4FB</div></div>
+  <div class="swatch" style="background:#82C7E6"><div class="name" style="color:var(--fg-1)">Blue 200</div><div class="hex" style="color:var(--fg-1);opacity:.75">#82C7E6</div></div>
+  <div class="swatch" style="background:#0087B6"><div class="name">Blue 500 · Trust</div><div class="hex">#0087B6</div></div>
+  <div class="swatch" style="background:#005F83"><div class="name">Blue 700</div><div class="hex">#005F83</div></div>
+  <div class="swatch" style="background:#0D3449"><div class="name">Blue 900</div><div class="hex">#0D3449</div></div>
+</div></div></body></html>

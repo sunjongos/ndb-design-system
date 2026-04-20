@@ -1,9 +1,267 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ============================================================
+   NDB Design System — Colors & Type Tokens
+   Namyangju Baek Hospital
+   Source of truth: DESIGN.md in sunjongos/ndb-design-system
+   ============================================================ */
 
-@layer base {
-  body {
-    @apply font-sans bg-gray-50 text-gray-900;
-  }
+/* Pretendard via CDN (variable, covers KR + Latin).
+   Falls back to Noto Sans KR, then system sans. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  /* ---------- BRAND CORE (from logo n/d/b triad) ---------- */
+  --ndb-green:        #92C118;  /* 'n' — healing, nature, positive */
+  --ndb-green-50:     #F4F9E8;
+  --ndb-green-100:    #E4F1C6;
+  --ndb-green-200:    #CDE593;
+  --ndb-green-300:    #B5D75F;
+  --ndb-green-400:    #A2CB35;
+  --ndb-green-500:    #92C118;  /* base */
+  --ndb-green-600:    #7CA412;
+  --ndb-green-700:    #62830E;
+  --ndb-green-800:    #4A6509;
+  --ndb-green-900:    #334706;
+
+  --ndb-blue:         #0087B6;  /* 'd' — trust, expertise, structure */
+  --ndb-blue-50:      #E6F4FB;
+  --ndb-blue-100:     #BEE1F3;
+  --ndb-blue-200:     #82C7E6;
+  --ndb-blue-300:     #3FADD7;
+  --ndb-blue-400:     #1899C7;
+  --ndb-blue-500:     #0087B6;  /* base */
+  --ndb-blue-600:     #0074A0;
+  --ndb-blue-700:     #005F83;
+  --ndb-blue-800:     #0A4966;
+  --ndb-blue-900:     #0D3449;
+
+  --ndb-orange:       #F29D00;  /* 'b' — warmth, energy, friendliness */
+  --ndb-orange-50:    #FEF5E4;
+  --ndb-orange-100:   #FCE5B8;
+  --ndb-orange-200:   #F9CF7F;
+  --ndb-orange-300:   #F6B947;
+  --ndb-orange-400:   #F4AA20;
+  --ndb-orange-500:   #F29D00;  /* base */
+  --ndb-orange-600:   #D28700;
+  --ndb-orange-700:   #A56A00;
+  --ndb-orange-800:   #784D00;
+  --ndb-orange-900:   #4B3000;
+
+  /* ---------- NEUTRALS (sterile, premium whites) ---------- */
+  --ndb-white:        #FFFFFF;
+  --ndb-neutral-25:   #FCFDFE;  /* pristine background */
+  --ndb-neutral-50:   #F7F9FB;  /* ultra-light gray */
+  --ndb-neutral-100:  #EEF2F6;
+  --ndb-neutral-200:  #DDE4EC;
+  --ndb-neutral-300:  #C3CEDA;
+  --ndb-neutral-400:  #97A5B4;
+  --ndb-neutral-500:  #6B7886;
+  --ndb-neutral-600:  #4C5866;
+  --ndb-neutral-700:  #344050;
+  --ndb-neutral-800:  #1F2A38;
+  --ndb-neutral-900:  #0F1822;
+
+  /* ---------- SEMANTIC SURFACE + FG ---------- */
+  --bg-app:           var(--ndb-neutral-50);
+  --bg-surface:       var(--ndb-white);
+  --bg-subtle:        var(--ndb-neutral-50);
+  --bg-muted:         var(--ndb-neutral-100);
+  --bg-inverse:       var(--ndb-neutral-900);
+
+  --fg-1:             var(--ndb-neutral-900);  /* primary text */
+  --fg-2:             var(--ndb-neutral-700);  /* secondary text */
+  --fg-3:             var(--ndb-neutral-500);  /* tertiary / meta */
+  --fg-4:             var(--ndb-neutral-400);  /* placeholders */
+  --fg-inverse:       var(--ndb-white);
+  --fg-on-primary:    var(--ndb-white);
+
+  /* ---------- SEMANTIC BRAND ROLES ---------- */
+  --trust:            var(--ndb-blue-500);     /* trust blue — headers, CTAs */
+  --trust-hover:      var(--ndb-blue-600);
+  --trust-press:      var(--ndb-blue-700);
+  --trust-soft:       var(--ndb-blue-50);
+
+  --healing:          var(--ndb-green-500);    /* healing green — success, progress */
+  --healing-hover:    var(--ndb-green-600);
+  --healing-soft:     var(--ndb-green-50);
+
+  --warmth:           var(--ndb-orange-500);   /* highlight orange — attention, accents */
+  --warmth-hover:     var(--ndb-orange-600);
+  --warmth-soft:      var(--ndb-orange-50);
+
+  /* ---------- STATES ---------- */
+  --success:          var(--ndb-green-600);
+  --success-soft:     var(--ndb-green-50);
+  --info:             var(--ndb-blue-500);
+  --info-soft:        var(--ndb-blue-50);
+  --warning:          var(--ndb-orange-500);
+  --warning-soft:     var(--ndb-orange-50);
+  --danger:           #D14343;
+  --danger-soft:      #FBE9E9;
+
+  /* ---------- BORDERS ---------- */
+  --border-subtle:    rgba(15, 24, 34, 0.06);
+  --border-default:   var(--ndb-neutral-200);
+  --border-strong:    var(--ndb-neutral-300);
+  --border-focus:     var(--ndb-blue-400);
+
+  /* ---------- RADII (soft, empathetic) ---------- */
+  --radius-xs:        4px;
+  --radius-sm:        6px;   /* inputs */
+  --radius-md:        8px;   /* buttons, small cards */
+  --radius-lg:        12px;  /* cards */
+  --radius-xl:        16px;  /* modals, hero cards */
+  --radius-2xl:       20px;
+  --radius-pill:      999px;
+
+  /* ---------- SHADOWS (subtle, clinical depth) ---------- */
+  --shadow-xs:        0 1px 2px rgba(15, 24, 34, 0.04);
+  --shadow-sm:        0 1px 3px rgba(15, 24, 34, 0.06), 0 1px 2px rgba(15, 24, 34, 0.04);
+  --shadow-md:        0 4px 12px rgba(15, 24, 34, 0.06), 0 2px 4px rgba(15, 24, 34, 0.04);
+  --shadow-lg:        0 12px 28px rgba(15, 24, 34, 0.08), 0 4px 8px rgba(15, 24, 34, 0.04);
+  --shadow-xl:        0 24px 48px rgba(15, 24, 34, 0.10), 0 8px 16px rgba(15, 24, 34, 0.04);
+  --shadow-focus:     0 0 0 3px rgba(0, 135, 182, 0.22);
+  --shadow-focus-err: 0 0 0 3px rgba(209, 67, 67, 0.22);
+
+  /* Soft brand-tinted shadow for hero cards */
+  --shadow-brand:     0 18px 40px rgba(0, 135, 182, 0.14);
+
+  /* ---------- SPACING (4px grid) ---------- */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+
+  /* ---------- TYPE SYSTEM ---------- */
+  --font-sans:        'Pretendard Variable', 'Pretendard', 'Noto Sans KR',
+                      -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+                      'Segoe UI', Roboto, sans-serif;
+  --font-mono:        'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, monospace;
+
+  /* weights */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-extrabold:800;
+
+  /* scale (accessibility-first; large bodies for elderly patients) */
+  --fs-display:  48px;   --lh-display:  1.1;
+  --fs-h1:       36px;   --lh-h1:       1.2;
+  --fs-h2:       28px;   --lh-h2:       1.25;
+  --fs-h3:       22px;   --lh-h3:       1.3;
+  --fs-h4:       18px;   --lh-h4:       1.4;
+  --fs-body-lg:  18px;   --lh-body-lg:  1.6;   /* default body, patient-facing */
+  --fs-body:     16px;   --lh-body:     1.6;
+  --fs-body-sm:  14px;   --lh-body-sm:  1.55;
+  --fs-caption:  13px;   --lh-caption:  1.5;
+  --fs-micro:    12px;   --lh-micro:    1.4;
+
+  /* tap targets (accessibility) */
+  --tap-min:     44px;
+  --tap-compact: 36px;
+
+  /* ---------- MOTION ---------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);      /* enters */
+  --ease-emphasis: cubic-bezier(0.3, 0, 0, 1);      /* hero transitions */
+  --ease-exit:     cubic-bezier(0.4, 0, 1, 1);      /* exits */
+  --dur-fast:      120ms;
+  --dur-base:      200ms;
+  --dur-slow:      320ms;
+
+  /* ---------- LAYERING ---------- */
+  --z-base:    0;
+  --z-sticky:  50;
+  --z-overlay: 100;
+  --z-modal:   200;
+  --z-toast:   300;
+}
+
+/* ============================================================
+   BASE ELEMENTS — semantic defaults for h1…p, body, etc.
+   ============================================================ */
+
+html, body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+  background: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv01";
+}
+
+h1, h2, h3, h4 { font-family: var(--font-sans); color: var(--fg-1); margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: var(--fw-bold); letter-spacing: -0.02em; }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: var(--fw-bold); letter-spacing: -0.015em; }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: var(--fw-semibold); }
+h4 { font-size: var(--fs-h4); line-height: var(--lh-h4); font-weight: var(--fw-semibold); }
+
+p { margin: 0; color: var(--fg-2); font-size: var(--fs-body); line-height: var(--lh-body); }
+
+small { font-size: var(--fs-caption); color: var(--fg-3); }
+
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-muted);
+  padding: 1px 5px;
+  border-radius: var(--radius-xs);
+}
+
+/* ============================================================
+   UTILITY CLASSES — opt-in semantic type + surface helpers
+   ============================================================ */
+
+.ndb-display  { font-size: var(--fs-display); line-height: var(--lh-display); font-weight: var(--fw-extrabold); letter-spacing: -0.025em; }
+.ndb-h1       { font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: var(--fw-bold); }
+.ndb-h2       { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: var(--fw-bold); }
+.ndb-h3       { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: var(--fw-semibold); }
+.ndb-h4       { font-size: var(--fs-h4); line-height: var(--lh-h4); font-weight: var(--fw-semibold); }
+.ndb-body-lg  { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); }
+.ndb-body     { font-size: var(--fs-body); line-height: var(--lh-body); }
+.ndb-body-sm  { font-size: var(--fs-body-sm); line-height: var(--lh-body-sm); }
+.ndb-caption  { font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--fg-3); }
+.ndb-overline { font-size: var(--fs-micro); line-height: var(--lh-micro); letter-spacing: 0.12em; text-transform: uppercase; font-weight: var(--fw-semibold); color: var(--fg-3); }
+
+.ndb-mono     { font-family: var(--font-mono); }
+
+/* semantic text */
+.fg-1 { color: var(--fg-1); }
+.fg-2 { color: var(--fg-2); }
+.fg-3 { color: var(--fg-3); }
+.fg-trust   { color: var(--trust); }
+.fg-healing { color: var(--healing); }
+.fg-warmth  { color: var(--warmth); }
+
+/* surface */
+.ndb-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.ndb-card-hover {
+  transition: transform var(--dur-base) var(--ease-standard),
+              box-shadow var(--dur-base) var(--ease-standard);
+}
+.ndb-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* focus ring (accessibility) */
+.ndb-focus-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
 }

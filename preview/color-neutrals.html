@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body { margin:0; padding:0; background:var(--bg-surface); }
+  .card { padding: 20px 24px; font-family: var(--font-sans); color: var(--fg-1); }
+  .row { display:flex; gap:8px; flex-wrap:nowrap; overflow-x:auto; }
+  .swatch { flex: 1 1 0; min-width:0; height:96px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); padding:10px 12px; display:flex; flex-direction:column; justify-content:space-between; }
+  .swatch .name { font-size:12px; font-weight:600; }
+  .swatch .hex  { font-family:var(--font-mono); font-size:10px; opacity:.8; }
+  .dark { color:#fff; }
+  .dark .hex { opacity:.85; }
+</style></head><body><div class="card"><div class="row">
+  <div class="swatch" style="background:#FCFDFE"><div class="name">25</div><div class="hex">#FCFDFE</div></div>
+  <div class="swatch" style="background:#F7F9FB"><div class="name">50 · bg</div><div class="hex">#F7F9FB</div></div>
+  <div class="swatch" style="background:#EEF2F6"><div class="name">100</div><div class="hex">#EEF2F6</div></div>
+  <div class="swatch" style="background:#DDE4EC"><div class="name">200 · border</div><div class="hex">#DDE4EC</div></div>
+  <div class="swatch" style="background:#97A5B4" class="dark"><div class="name" style="color:#fff">400</div><div class="hex" style="color:#fff">#97A5B4</div></div>
+  <div class="swatch dark" style="background:#4C5866"><div class="name">600 · fg-2</div><div class="hex">#4C5866</div></div>
+  <div class="swatch dark" style="background:#1F2A38"><div class="name">800</div><div class="hex">#1F2A38</div></div>
+  <div class="swatch dark" style="background:#0F1822"><div class="name">900 · fg-1</div><div class="hex">#0F1822</div></div>
+</div></div></body></html>

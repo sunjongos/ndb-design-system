@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body { margin:0; padding:0; background:var(--bg-surface); }
+  .card { padding:22px 24px; font-family: var(--font-sans); }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px; }
+  .row:last-child { margin-bottom:0; }
+  .btn { font-family:inherit; font-weight:600; font-size:14px; line-height:1; padding:12px 18px; border-radius:var(--radius-md); border:1px solid transparent; cursor:pointer; min-height:44px; display:inline-flex; align-items:center; gap:8px; transition: background var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard); }
+  .btn-primary { background:var(--trust); color:#fff; box-shadow:var(--shadow-sm); }
+  .btn-primary:hover { background:var(--trust-hover); box-shadow:var(--shadow-md); }
+  .btn-secondary { background:var(--warmth); color:#fff; box-shadow:var(--shadow-sm); }
+  .btn-secondary:hover { background:var(--warmth-hover); }
+  .btn-success { background:var(--healing); color:#fff; box-shadow:var(--shadow-sm); }
+  .btn-outline { background:#fff; color:var(--trust); border-color:var(--trust); }
+  .btn-outline:hover { background:var(--trust-soft); }
+  .btn-ghost { background:transparent; color:var(--fg-2); }
+  .btn-ghost:hover { background:var(--bg-muted); color:var(--fg-1); }
+  .btn-disabled { opacity:.5; cursor:not-allowed; }
+  .btn-sm { padding:8px 12px; min-height:36px; font-size:13px; }
+</style></head><body><div class="card">
+  <div class="row">
+    <button class="btn btn-primary">진료 예약하기</button>
+    <button class="btn btn-secondary">자세히 보기</button>
+    <button class="btn btn-success">확인</button>
+    <button class="btn btn-outline">Cancel</button>
+    <button class="btn btn-ghost">Skip</button>
+    <button class="btn btn-primary btn-disabled">Disabled</button>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-outline btn-sm">Small</button>
+    <button class="btn btn-ghost btn-sm">Small</button>
+  </div>
+</div></body></html>

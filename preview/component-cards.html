@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body { margin:0; padding:0; background:var(--bg-app); }
+  .grid { padding:22px 24px; font-family: var(--font-sans); display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .card { background:#fff; border:1px solid var(--border-subtle); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); padding:16px 18px; }
+  .eye { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--trust); font-weight:700; margin-bottom:6px; }
+  h3 { font-size:17px; margin:0 0 4px; }
+  p  { font-size:13px; color:var(--fg-2); margin:0; line-height:1.55; }
+  .row { display:flex; align-items:center; gap:10px; }
+  .avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#DDE4EC,#EEF2F6); flex:none; }
+  .stat { font-size:28px; font-weight:700; letter-spacing:-.02em; color:var(--trust); }
+</style></head><body><div class="grid">
+  <div class="card">
+    <div class="eye">SPINE CENTER</div>
+    <h3>척추 내시경 수술</h3>
+    <p>최소 침습 · 빠른 회복. 평균 2박 3일 입원.</p>
+  </div>
+  <div class="card">
+    <div class="row">
+      <div class="avatar"></div>
+      <div><h3 style="font-size:15px">김 민 수 과장</h3><p style="font-size:12px">척추센터 · 척추 내시경</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="eye" style="color:var(--warmth)">THIS WEEK</div>
+    <div class="stat">128</div>
+    <p>명의 환자가 진료를 받았습니다</p>
+  </div>
+  <div class="card" style="box-shadow:var(--shadow-brand); border-color:transparent">
+    <h3 style="color:var(--trust)">Featured card</h3>
+    <p>Tinted shadow for hero / feature surfaces.</p>
+  </div>
+</div></body></html>

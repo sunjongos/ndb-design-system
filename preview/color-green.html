@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body { margin:0; padding:0; background:var(--bg-surface); }
+  .card { padding: 20px 24px; font-family: var(--font-sans); color: var(--fg-1); }
+  .row { display:flex; gap:10px; align-items:stretch; flex-wrap:wrap; }
+  .swatch {
+    flex: 1 1 0; min-width: 0;
+    height: 96px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 10px 12px;
+    color: #fff;
+  }
+  .swatch .name { font-size: 13px; font-weight: 600; letter-spacing: -0.01em; }
+  .swatch .hex  { font-family: var(--font-mono); font-size: 11px; opacity: 0.9; }
+  .swatch.on-light { color: var(--fg-1); }
+  .swatch.on-light .hex { opacity: 0.7; }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="swatch" style="background:#F4F9E8" class="on-light"><div class="name" style="color:var(--fg-1)">Green 50</div><div class="hex" style="color:var(--fg-2)">#F4F9E8</div></div>
+    <div class="swatch" style="background:#CDE593"><div class="name" style="color:var(--fg-1)">Green 200</div><div class="hex" style="color:var(--fg-1);opacity:.75">#CDE593</div></div>
+    <div class="swatch" style="background:#92C118"><div class="name">Green 500 · Healing</div><div class="hex">#92C118</div></div>
+    <div class="swatch" style="background:#62830E"><div class="name">Green 700</div><div class="hex">#62830E</div></div>
+    <div class="swatch" style="background:#334706"><div class="name">Green 900</div><div class="hex">#334706</div></div>
+  </div>
+</div></body></html>

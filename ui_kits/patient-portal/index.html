@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<title>NDB · Patient Portal</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg"/>
+<link rel="stylesheet" href="../../colors_and_type.css"/>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body { background: var(--bg-app); }</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="./Sidebar.jsx"></script>
+<script type="text/babel" src="./TopBar.jsx"></script>
+<script type="text/babel" src="./AppointmentCard.jsx"></script>
+<script type="text/babel" src="./QuickActions.jsx"></script>
+<script type="text/babel" src="./RecentVisits.jsx"></script>
+<script type="text/babel" src="./VitalStats.jsx"></script>
+<script type="text/babel">
+function App() {
+  React.useEffect(() => { lucide.createIcons({ attrs: { 'stroke-width': 1.75 } }); });
+  return (
+    <div style={{ display: 'flex', minHeight: '100vh' }}>
+      <Sidebar/>
+      <main style={{ flex: 1, minWidth: 0 }}>
+        <TopBar/>
+        <div style={{ padding: '28px 32px', maxWidth: 1280, margin: '0 auto' }}>
+          <div style={{ marginBottom: 24 }}>
+            <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 4, letterSpacing: '-0.02em' }}>안녕하세요, 홍길동 님</h1>
+            <p style={{ color: 'var(--fg-2)', fontSize: 15 }}>오늘도 건강한 하루 되세요. 회복이 순조롭게 진행되고 있습니다.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr', gap: 20, marginBottom: 24 }}>
+            <AppointmentCard/>
+            <div style={{ display: 'grid', gap: 14 }}>
+              <VitalStats/>
+            </div>
+          </div>
+          <div style={{ marginBottom: 24 }}>
+            <h2 style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--fg-3)', marginBottom: 12 }}>빠른 작업</h2>
+            <QuickActions/>
+          </div>
+          <RecentVisits/>
+        </div>
+      </main>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
